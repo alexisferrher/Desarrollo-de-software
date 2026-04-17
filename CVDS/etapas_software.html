@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body{
+        background-color: rgb(4, 4, 109);
+        font-size: 20px; 
+  background-image: 
+    linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255,255,255,0.15) 1px, transparent 1px),
+    linear-gradient(45deg, transparent 49%, rgba(255,255,255,0.2) 50%, transparent 40%),
+    linear-gradient(-45deg, transparent 49%, rgba(255,255,255,0.2) 50%, transparent 40%);
+    background-size: 50px 50px, 50px 50px, 110px 110px, 110px 110px;
+    }
+    table{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    td{
+         margin: 10px;
+        padding: 15px;
+        border: solid black;
+        border-radius: 20px;
+        background-image: linear-gradient(rgb(139, 164, 255),rgb(141, 223, 246));
+    }
+    p{
+        text-align: justify;
+    }
+    .titulo{
+        text-align: center;
+         margin-top: 5px;
+        margin-bottom: 70px;
+        border: solid black;
+         border-radius: 20px;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 1.5); 
+        background-image: linear-gradient(rgb(0, 255, 238),rgb(102, 181, 255));
+    }
+     a{
+        text-decoration: none; 
+  color: inherit;
+    }
+    .regreso{
+        border: solid black;
+        background-color: rgb(248, 48, 112);
+        display: inline;
+    }
+    img{
+        width: 350px;
+        height: 200px;
+        border-radius: 8px;
+    }
+</style>
+<body>
+    <a href="index.html">
+    <div class="regreso">
+            Volver a la pagina principal
+    </div>
+    </a>
+    <div class="titulo">
+    <h1>5 ETAPAS DEL DESARROLLO DE SOFTWARE</h1>
+    </div>
+    <table>
+        <tr>
+            <td>
+                <audio src="audios/Grabación_(11)_out.mp3" controls></audio>
+                <h3>1.-Comunicacion</h3><p>Es la etapa inicial del proceso, donde se establece la interacción 
+                con el cliente o usuario final para comprender completamente el problema que se desea resolver. 
+                En esta fase se identifican y documentan los requisitos del sistema, tanto funcionales como no funcionales. 
+                También se definen los objetivos, restricciones y expectativas del proyecto. Una comunicación efectiva es fundamental, 
+                ya que cualquier error en esta etapa puede afectar todo el desarrollo posterior.</p>
+                <img src="imagenes/etapas_analisis.jpg" alt="">
+                
+            </td>
+            <td>
+                <audio src="audios/Grabación_(12)_out.mp3" controls></audio>
+                <h3>2.-Planeacion</h3><p>En esta etapa se organiza y estructura el proyecto de software. Se estiman los recursos 
+                necesarios (humanos, tecnológicos y económicos), se define un cronograma de actividades y se establecen las tareas 
+                a realizar. Además, se identifican posibles riesgos y se plantean estrategias para mitigarlos. La planeación permite 
+                tener un control adecuado del proyecto y asegurar que se cumplan los tiempos y objetivos establecidos.</p>
+                 <img src="imagenes/etapas_planeacion.jpg" alt="">
+            </td>
+            <td>
+                <audio src="audios/Grabación_(13)_out.mp3" controls></audio>
+                <h3>3.-Modelado</h3><p>El modelado consiste en la creación de representaciones abstractas del sistema antes de 
+                su implementación. En esta fase se diseña la arquitectura del software, la estructura de datos, los algoritmos y 
+                las interfaces de usuario. Se utilizan herramientas como diagramas UML para visualizar el funcionamiento del sistema. 
+                El objetivo es construir un “modelo” claro que sirva como guía para el desarrollo, reduciendo errores y mejorando la 
+                calidad del software.</p>
+                 <img src="imagenes/etapas_modelado.jpg" alt="">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <audio src="audios/Grabación_(14)_out.mp3" controls></audio>
+                <h3>4.-Construccion</h3><p>Es la etapa donde se lleva a cabo la implementación del sistema mediante la programación. 
+                Los desarrolladores escriben el código siguiendo los modelos y diseños previamente definidos. Además, se realizan 
+                pruebas (unitarias, de integración, etc.) para verificar que cada componente funcione correctamente. Esta fase combina 
+                desarrollo y validación, asegurando que el software cumpla con los requisitos establecidos.</p>
+                 <img src="imagenes/etapas_construccion.JPG" alt="">
+            </td>
+            <td>
+                <audio src="audios/Grabación_(15)_out.mp3" controls></audio>
+                <h3>5.-Despliegue</h3><p>En esta última etapa el software se entrega al usuario final y se pone en funcionamiento 
+                en un entorno real. Incluye la instalación, configuración y capacitación de los usuarios si es necesario. También 
+                se recopila retroalimentación para realizar mejoras, correcciones o actualizaciones futuras. El despliegue no 
+                marca el final del proceso, ya que el software entra en una fase continua de mantenimiento y evolución.</p>
+                 <img src="imagenes/etapas_despliegue.jpg" alt="">
+            </td>
+        </tr>
+    </table>
+    
+</body>
+</html>

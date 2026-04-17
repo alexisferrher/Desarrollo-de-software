@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body{
+        background-color: rgb(4, 4, 109);
+        font-size: 20px; 
+  background-image: 
+    linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255,255,255,0.15) 1px, transparent 1px),
+    linear-gradient(45deg, transparent 49%, rgba(255,255,255,0.2) 50%, transparent 40%),
+    linear-gradient(-45deg, transparent 49%, rgba(255,255,255,0.2) 50%, transparent 40%);
+    background-size: 50px 50px, 50px 50px, 110px 110px, 110px 110px;
+    }
+    .categoria{
+        position: relative;
+        border: solid black;
+        background-color: aqua;
+        display: inline;
+        padding: 20px;
+    }
+    table{
+        width: 100%;
+       border-collapse: separate;
+        border-spacing: 0 15px;
+    }
+     .titulo{
+        text-align: center;
+        margin-bottom: 70px;
+         margin-top: 5px;
+        border: solid black;
+         border-radius: 20px;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 1.5); 
+        background-image: linear-gradient(rgb(0, 255, 238),rgb(102, 181, 255));
+    }
+    .modelo{
+        border: solid black;
+        background-color: blueviolet;
+        display: inline;
+        position: relative;
+        padding: 5px;
+        border-radius: 12px;
+        cursor: pointer; 
+    }
+    .modelo:hover{
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 1.5);
+        border: solid rgb(56, 104, 210);
+        background-color: rgb(113, 35, 185);
+        display: inline;
+        position: relative;
+        padding: 5px;
+        border-radius: 12px;
+        cursor: pointer; 
+    }
+    .texto{
+        float: left;
+        width: 50%;
+        margin: 10px;
+        padding: 15px;
+        border: solid black;
+        border-radius: 20px;
+        background-image: linear-gradient(rgb(139, 164, 255),rgb(141, 223, 246));
+    }
+    .tabla{
+        float: right;
+        width: 50%;
+        margin: 10px;
+        padding: 15px;
+        border-radius: 8px;
+        background-color: rgb(234, 228, 255);
+    }
+    img{
+        border-radius: 8px;
+        width: 400px;
+        height: 200px;
+    }
+     a{
+        text-decoration: none; 
+  color: inherit;
+    } a{
+        text-decoration: none; 
+  color: inherit;
+    }
+    .regreso{
+        border: solid black;
+       background-color: rgb(248, 48, 112);
+        display: inline;
+    }
+    td{
+        border-bottom: solid black;
+        border-right: solid black;
+    }
+    button{
+        background-color: rgb(248, 48, 112);
+        width: 150px;
+        height: 50px;
+        font-size: 25px;
+    }
+    .principal{
+        height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+</style>
+<body>
+    <div id="principal" class="principal">
+        <a href="index.html">
+        <div class="regreso">
+        
+            Volver a la pagina principal
+        
+    </div>
+        </a>
+    <DIV class="titulo">
+    <h1>LAS 4 CATEGORIAS CON LOS 12 MODELOS DE CVDS</h1></DIV>
+                
+            <div class="categoria" style="top: 7%; left: 4%;">MODELOS PRESCRIPTIVOS</div>
+                <div  class="modelo" style="bottom: 2%;" onclick="mostrar_modelo('cascada')">CASCADA</div>
+                <div  class="modelo" style="top: 5%; right: 4%;" onclick="mostrar_modelo('incremental')">INCREMENTAL</div>
+                <div  class="modelo" style="right: 16%; top: 12%;" onclick="mostrar_modelo('evolutivo')">PROTOTIPADO</div>
+                <div  class="modelo" style="right: 31%; top: 19%;" onclick="mostrar_modelo('espiral')">ESPIRAL</div>
+                <div class="modelo" style="right: 63%; top: 20%;" onclick="mostrar_modelo('concurrente')">DESARROLLO CONCURRENTE</div>
+                
+            <div class="categoria" style="left: 6%; top: 38%;">MODELOS&nbsp;ESPECIALIZADOS</div>
+                <div class="modelo" style="top: 29%; right: 4%;" onclick="mostrar_modelo('componentes')">BASADO EN COMPONENETES</div>
+                <div class="modelo" style=" top: 37%; right: 15%;" onclick="mostrar_modelo('formales')">FORMALES</div>
+                <div class="modelo" style="top: 47%; right: 34%;" onclick="mostrar_modelo('oaspectos')">ORIENTADO A ASPECTOS</div>
+        
+            <div class="categoria" style=" right: 16%;">PROCESO UNIFICADO</div>
+                <div class="modelo" style="left: 83%; bottom: 4%;" onclick="mostrar_modelo('rup')">RUP</div>
+
+            <div class="categoria" style="left: 55%; top: 33% ;">MODELOS AGILES</div>
+                <div class="modelo" style="left: 50%; top: 25%;" onclick="mostrar_modelo('scrum')">SCRUM</div>
+                <div class="modelo" style=" left: 29%; top: 42%;" onclick="mostrar_modelo('programming')">EXTREME PROGRAMMING (XP)</div>
+                <div class="modelo" style="left: 25%; top:33% ;" onclick="mostrar_modelo('kanban')">KANBAN</div>
+        
+    
+    </div>
+    <template id="cascada">
+        <button onclick="pant_prin()">Regresar</button>
+        <DIV class="titulo">
+            <h1>MODELO DE CASCADA</h1>
+        </DIV>
+        <div class="texto">
+            <p>Es el enfoque mas antiguo y clasico.Propone un avance estrictamente secuencial:
+                Requisitos > Anlaisis > Diseño > Codifiacion > Pruebas.
+                cada fase debe generar un documento o producto aprobado antes de iniciar la siguiente.
+                Este se utiliza mucho en proyectos de ingenieria gubernamental o de defensa, donde la domuentacion es prioritaria.  
+            </p>
+        </div>
+        <div class="tabla">
+            <table>
+                <tr>
+                    <td>Ventajas</td>
+                    <td>Desventajas</td>
+                </tr>
+                <tr>
+                    <td>
+                        - Proporciona una estructura disciplinada y facil de controlar mediante hilos. <br>
+                        - Es ideal cuando los requisitos son fijos y ya se conocen desde el principio.
+                    </td>
+                    <td>
+                        - El "bloqueo" es comun (Que un miembro espere al otro). <br>
+                        - No admite cambios facilmente y el cliente solo ve el software funcional al final de todo el ciclo.
+                    </td>
+                </tr>
+            </table>
+</div>
+<center><img src="imagenes/modelo_cascada.jpg" alt=""></center>
+<center><audio src="audios/Grabación_(21)_out.mp3" controls></audio></center>
+<center><iframe src="https://www.youtube.com/embed/gM66N5pwvrA" frameborder="0" allowfullscreen loading="lazy" width="90%" height="500px" allow="encrypted-media; gyroscope;" ></iframe></center>
+
+    </template>
+        <template id="incremental">
+            <button onclick="pant_prin()">Regresar</button>
+        <DIV class="titulo">
+            <h1>MODELO INCREMENTAL</h1>
+        </DIV>
+        <div class="texto">
+            <p>
+                Combina los elementos de la cascada con la filosofia de repeticion. El proyecto se divide en modulos que se
+                entregan por separado. El primer incremento suele ser el "nucleo" del sistema. 
+            </p>
+        </div>
+        <div class="tabla">
+            <table>
+                <tr>
+                    <td>Ventajas</td>
+                    <td>Desventajas</td>
+                </tr>
+                <tr>
+                    <td>
+                        - El cliente recibe valor rapidamente. <br>
+                        - Permite aprender de la entrega del primer incremento para mejorar el segundo. <br>
+                        - Reduce el impacto de un fallo total del sistema.
+                    </td>
+                    <td>
+                        - Requiere una arquitectura inicial muy solida para permitir la integracion de piezas futuras. <br>
+                        - Es dificil de gestionar si el equipo de desarrollo es pequeño.
+                    </td>
+                </tr>
+            </table>
+</div>
+<center><audio src="audios/Grabación_(22)_out.mp3" controls></audio></center>
+<center><img src="imagenes/modelo_incremental.jpg" alt=""></center>
+<center><iframe src="https://www.youtube.com/embed/Qsxlz64wvYw" frameborder="0" allowfullscreen width="90%" height="500px"></iframe></center>
+    </template>
+        <template id="evolutivo">
+            <button onclick="pant_prin()">Regresar</button>
+        <DIV class="titulo">
+            <h1>MODELO PROTOTIPADO</h1>
+        </DIV>
+        <div class="texto">
+            <p>
+                Consiste en construir rapidamente una version simplificada del software para que el usuario lo evalue. No se busca 
+                la perfeccion tecnica, sino validar la interfaz y los requisitos.  
+            </p>
+        </div>
+        <div class="tabla">
+            <table>
+                <tr>
+                    <td>Ventajas</td>
+                    <td>Desventajas</td>
+                </tr>
+                <tr>
+                    <td>
+                        - Reduce drasticamente los malentendidos entre desarrollador y cliente. <br>
+                        - Aumenta la satisfaccion del usuario al verse involucrado desde el inicio.
+                    </td>
+                    <td>
+                        - el cliente puede presionar para que el prototipo que (que es frajil) se convierta en el producto final. <br>
+                        - Los desarrolladores suelen sacrificar calidad por velocidad en esta etapa.
+                    </td>
+                </tr>
+            </table>
+</div>
+<center><audio src="audios/Grabación_(23)_out.mp3" controls></audio></center>
+<center><img src="imagenes/modelo_evolutivo.png" alt=""></center>
+<center><iframe src="https://www.youtube.com/embed/RQ__raH3iFg" frameborder="0" allowfullscreen width="90%" height="500px"></iframe></center>
+    </template>
+        <template id="espiral">
+            <button onclick="pant_prin()">Regresar</button>
+        <DIV class="titulo">
+            <h1>MODELO ESPIRAL</h1>
+        </DIV>
+        <div class="texto">
+            <p>
+                Propuesto por Barry Boehm, este modelo acopla la naturaleza iterativa del prototipado con los aspectos controlados del
+                modelo en cascada. El desarrollo gira entorno al analisis de riesgo en cada ciclo.  
+            </p>
+        </div>
+        <div class="tabla">
+            <table>
+                <tr>
+                    <td>Ventajas</td>
+                    <td>Desventajas</td>
+                </tr>
+                <tr>
+                    <td>
+                        - Es el modelo mas realista para sistemas de gran escala. <br>
+                        - Permite aplicar correciones en cada vuelta de la espiral y gestiona los riesgos de forma experta.
+                    </td>
+                    <td>
+                        - Requiere gran experiencia en evaluacion de riesgos. <br>
+                        - Si un riesgo importante no se detecta, el proyecto fracasara.
+                    </td>
+                </tr>
+            </table>
+</div>
+<center><audio src="audios/Grabación_(24)_out.mp3" controls></audio></center>
+<center><img src="imagenes/modelo_espiral.png" alt=""></center>
+<center><iframe src="https://www.youtube.com/embed/-1wt037qqOg" frameborder="0" allowfullscreen width="90%" height="500px"></iframe></center>
+    </template>
+        <template id="concurrente">
+            <button onclick="pant_prin()">Regresar</button>
+        <DIV class="titulo">
+            <h1>MODELO DE DESARROLLO CONCURRENTE</h1>
+        </DIV>
+        <div class="texto">
+            <p>
+                A diferencia de los modelos lineales, este visualiza el proceso como una serie de actividades tecnicas importantes
+                ,tareas y sus estados asociados. Todas las actividades existen simultaneamente pero en diferentes estados. 
+            </p>
+        </div>
+        <div class="tabla">
+            <table>
+                <tr>
+                    <td>Ventajas</td>
+                    <td>Desventajas</td>
+                </tr>
+                <tr>
+                    <td>
+                        - Proporciona una imagen exacta del estado actual del proyecto. <br>
+                        - Permite que el equipo trabaje en diseño, mientras que otros corrijen requisitos 
+                    </td>
+                    <td>
+                        - La gestion de dependencias entre actividades concurrentes es compleja y genera confusion si no hay 
+                        herramientas de comunicacion potentes.
+                    </td>
+                </tr>
+            </table>
+</div>
+<center><audio src="audios/Grabación_(25)_out.mp3" controls></audio></center>
+<center><img src="imagenes/modelo_concurrente.png" alt=""></center>
+<center><iframe src="https://www.youtube.com/embed/8k8Vrzp0MWQ" frameborder="0" allowfullscreen width="90%" height="500px"></iframe></center>
+    </template>
+    <template id="componentes">
+        <button onclick="pant_prin()">Regresar</button>
+        <DIV class="titulo">
+            <h1>MODELO BASADO EN COMPONENTES</h1>
+        </DIV>
+        <div class="texto">
+            <p>
+                Se fundamenta en la reutilizacion. El proceso busca piezas de software ya probadas (componentes) en bibliotecas o mercados 
+                para integrarlos en el nuevo sistema 
+            </p>
+        </div>
+        <div class="tabla">
+            <table>
+                <tr>
+                    <td>Ventajas</td>
+                    <td>Desventajas</td>
+                </tr>
+                <tr>
+                    <td>
+                        - Reduccion del 70% del tiempo de ciclo de desarrollo y de los costos. <br>
+                        - Mejora la fiabilidad, ya que los componentes suelen estar ya depurados.
+                    </td>
+                    <td>
+                        - El sistema queda limitado a lo que los componentes suelen hacer. <br>
+                        - Si el provedor y el componente deja de darle soporte, el software queda en riesgo.
+                    </td>
+                </tr>
+            </table>
+</div>
+<center><audio src="audios/Grabación_(26)_out.mp3" controls></audio></center>
+<center><img src="imagenes/modelo_componentes.png" alt=""></center>
+<center><iframe src="https://www.youtube.com/embed/QfI_VKWehTI" frameborder="0" allowfullscreen width="90%" height="500px"></iframe></center>
+
+    </template>
+    <template id="formales">
+        <button onclick="pant_prin()">Regresar</button>
+        <DIV class="titulo">
+            <h1>MODELO DE METODOS FORMALES</h1>
+        </DIV>
+        <div class="texto">
+            <p>
+                Utiliza una notacion matematica rigurosa para especificar, diseñar y verificar sistemas basados en computadora. se usan pruebas 
+                logicas para demostrar que el codigo hace exactamente lo que dice la especificacion. 
+            </p>
+        </div>
+        <div class="tabla">
+            <table>
+                <tr>
+                    <td>Ventajas</td>
+                    <td>Desventajas</td>
+                </tr>
+                <tr>
+                    <td>
+                        - Descubre ambiguedades y errores que son imposibles de detectar con pruebas convencionales. <br>
+                        - El estandar de oro para la seguridad
+                    </td>
+                    <td>
+                        - Es extremadamente lento y caro. <br>
+                        - La mayoria de programadores no tiene la formacion matematica necesaria.
+                    </td>
+                </tr>
+            </table>
+</div>
+<center><audio src="audios/Grabación_(27)_out.mp3" controls></audio></center>
+<center><img src="imagenes/modelo_formal.png" alt=""></center>
+<center><iframe src="https://www.youtube.com/embed/evK6PD3QQjE" frameborder="0" allowfullscreen width="90%" height="500px"></iframe></center>
+
+    </template>
+    <template id="oaspectos">
+        <button onclick="pant_prin()">Regresar</button>
+        <DIV class="titulo">
+            <h1>DESARROLLO ORIENTADO A ASPECTOS</h1>
+        </DIV>
+        <div class="texto">
+            <p>
+                Se basa en la separacion de las "incombeniencias" (concerns). Por ejemplo en lugar de escribir codigo de seguridad 
+                en cada funcion, se crea un "aspecto" de seguridad que se aplica a todo el sistema de forma automatica.  
+            </p>
+        </div>
+        <div class="tabla">
+            <table>
+                <tr>
+                    <td>Ventajas</td>
+                    <td>Desventajas</td>
+                </tr>
+                <tr>
+                    <td>
+                        - El codigo principal es mucho mas limpio y facil de leer. <br>
+                        - Facilita el mantenimiento, ya que si cambias la seguridad, solo tocas el aspecto y no todo el programa.
+                    </td>
+                    <td>
+                        - Requiere herramientas de programacion especificas y una mentalidad de diseño diferente a la programacion
+                         orientada a objetos tradicional.
+                    </td>
+                </tr>
+            </table>
+</div>
+<center><audio src="audios/Grabación_(28)_out.mp3" controls></audio></center>
+<center><img src="imagenes/modelo_objetos.PNG" alt=""></center>
+<center><iframe src="https://www.youtube.com/embed/IHle3l0aZeY" frameborder="0" allowfullscreen width="90%" height="500px"></iframe></center>
+
+    </template>
+    <template id="rup">
+        <button onclick="pant_prin()">Regresar</button>
+        <DIV class="titulo">
+            <h1>RUP</h1>
+        </DIV>
+        <div class="texto">
+            <p>
+                El Proceso Unificado (RUP) es una metodología de desarrollo de software que organiza el proyecto en fases (inicio, elaboración, construcción y transición) y se basa en un enfoque iterativo e incremental, donde el sistema se desarrolla en varias versiones hasta llegar al producto final.  
+            </p>
+        </div>
+        <div class="tabla">
+            <table>
+                <tr>
+                    <td>Ventajas</td>
+                    <td>Desventajas</td>
+                </tr>
+                <tr>
+                    <td>
+                        - Permite detectar errores tempranamente. <br>
+                        - Es flexible ante cambios en los requisitos. <br>
+                        - Se enfoca en la arquitectura y necesidades del usuario.
+                    </td>
+                    <td>
+                        - Puede ser complejo de implementar. <br>
+                        - No es ideal para proyectos pequeños. <br>
+                        - Necesita mayor tiempo y recursos. <br>
+                        - Requiere más documentación.
+                    </td>
+                </tr>
+            </table>
+</div>
+<center><audio src="audios/Grabación_(29)_out.mp3" controls></audio></center>
+<center><img src="imagenes/modelo_rup.jpg" alt=""></center>
+<center><iframe src="https://www.youtube.com/embed/HPa5KUt66NI" frameborder="0" allowfullscreen width="90%" height="500px"></iframe></center>
+
+    </template>
+    <template id="scrum">
+        <button onclick="pant_prin()">Regresar</button>
+        <DIV class="titulo">
+            <h1>SCRUM</h1>
+        </DIV>
+        <div class="texto">
+            <p>
+                Un marco de trabajo donde el equipo colabora de forma intensa. Se trabaja en "Sprints" y se relizan reuniones diarias de 
+                15 minutos para cordinar tareas. Se basa en la transparencia, inspeccion y adaptacion. 
+            </p>
+        </div>
+        <div class="tabla">
+            <table>
+                <tr>
+                    <td>Ventajas</td>
+                    <td>Desventajas</td>
+                </tr>
+                <tr>
+                    <td>
+                        - Permite cambiar prioridades en cada sprint. <br>
+                        - Fomenta la auto-organizacion del equipo y elimina la micro-gestion. 
+                    </td>
+                    <td>
+                        - No hay fecha final definida al inicio. <br>
+                        - Requiere que el cliente este muy presente para validar cada entrega.
+                    </td>
+                </tr>
+            </table>
+</div>
+<center><audio src="audios/Grabación_(30)_out.mp3" controls></audio></center>
+<center><img src="imagenes/modelo_scrum.png" alt=""></center>
+<center><iframe src="https://www.youtube.com/embed/a33xOe9d_Dk" frameborder="0" allowfullscreen width="90%" height="500px"></iframe></center>
+
+    </template>
+    <template id="programming">
+        <button onclick="pant_prin()">Regresar</button>
+        <DIV class="titulo">
+            <h1>EXTREME PROGRAMMING (XP)</h1>
+        </DIV>
+        <div class="texto">
+            <p>
+                Lleva las mejores practicas de programacion al "extremo". Se enfoca en la retroalimentacion continua, la 
+                simplicidad y comunicacion. Sus practicas incluyen Pair Programming y TDD (escribir las pruebas antes que el codigo). 
+            </p>
+        </div>
+        <div class="tabla">
+            <table>
+                <tr>
+                    <td>Ventajas</td>
+                    <td>Desventajas</td>
+                </tr>
+                <tr>
+                    <td>
+                        - El codigo es de altisima calidad y muy facil de cambiar. <br>
+                        - Los errores se detectan casi al instante.
+                    </td>
+                    <td>
+                        - La programacion en pareja puede ser agotadora y algunos programadores prefieren trabajar solos.
+                    </td>
+                </tr>
+            </table>
+</div>
+<center><audio src="audios/Grabación_(31)_out.mp3" controls></audio></center>
+<center><img src="imagenes/modelo_xp.jpg" alt=""></center>
+<center><iframe src="https://www.youtube.com/embed/6qCkRARKt00" frameborder="0" allowfullscreen width="90%" height="500px"></iframe></center>
+
+    </template>
+    <template id="kanban">
+        <button onclick="pant_prin()">Regresar</button>
+        <DIV class="titulo">
+            <h1>KANBAN</h1>
+        </DIV>
+        <div class="texto">
+            <p>
+                Proviene del sistema de produccion de toyota. Utiliza un tablero visual para mostrar el flujo de trabajo. Su regla de oro 
+                es limitar el WIP (Work In Progress), para evitar saturar a los desarroladores de tarea.  
+            </p>
+        </div>
+        <div class="tabla">
+            <table>
+                <tr>
+                    <td>Ventajas</td>
+                    <td>Desventajas</td>
+                </tr>
+                <tr>
+                    <td>
+                        - Reduce el tiempo de entrega total y evita el agotamiento de equipo.
+                    </td>
+                    <td>
+                        - Sin fechas de entragas rigidas, algunos equipos pueden perder el sentido de urgencia.
+                    </td>
+                </tr>
+            </table>
+</div>
+<center><audio src="audios/Grabación_(32)_out.mp3" controls></audio></center>
+<center><img src="imagenes/modelo_kanban.png" alt=""></center>
+<center><iframe src="https://www.youtube.com/embed/w-st9fGVM3c" frameborder="0" allowfullscreen width="90%" height="500px"></iframe></center>
+
+    </template>
+
+
+    <script>
+        function mostrar_modelo(idmodelo){
+            
+            const prin = document.getElementById("principal");
+            const temp = document.getElementById(idmodelo);
+            prin.innerHTML = " ";
+
+            const clone = temp.content.cloneNode(true);
+            prin.appendChild(clone);
+        }
+        function pant_prin(){
+
+            location.reload();
+        }
+    </script>
+
+
+</body>
+</html>
